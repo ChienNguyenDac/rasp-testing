@@ -5,3 +5,4 @@ collection.http
 public/uploads
 tmp/error.log
 tmp/uploads/*
+tmp/*
