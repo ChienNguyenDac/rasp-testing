@@ -1,0 +1,60 @@
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:19.593Z] !ulbyxs:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:19.696Z] !ulbyxs:packet2# +103ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet2#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:19.796Z] !ulbyxs:packet3# +100ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet3#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:19.899Z] !ulbyxs:packet4# +103ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet4#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:20.002Z] !ulbyxs:packet5# +103ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet5#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:20.105Z] !ulbyxs:packet6# +103ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet6#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:20.208Z] !ulbyxs:packet7# +103ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet7#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:20.310Z] !ulbyxs:packet8# +102ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet8#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:20.412Z] !ulbyxs:packet9# +102ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet9#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:20.514Z] !ulbyxs:packet10# +103ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet10#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:20.617Z] !ulbyxs:packet11# +102ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet11#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:20.718Z] !ulbyxs:packet12# +102ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet12#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:20.820Z] !ulbyxs:packet13# +101ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet13#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:20.922Z] !ulbyxs:packet14# +102ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet14#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:47:21.024Z] !ulbyxs:packet15# +102ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet15#"[39m
+[36m}[39m

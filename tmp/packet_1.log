@@ -1,0 +1,191 @@
+[36m[GATEWAY_TESTING] [2023-06-10T09:12:09.754Z] !czuwb2:packet-1# +0ms [39m
+[36m{[39m
+[36m  "message": "!czuwb2:packet-1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:13:09.102Z] List port available +0ms [39m
+[36m[[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.wlan-debug"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.usbserial-0001",[39m
+[36m    "manufacturer": "Silicon Labs",[39m
+[36m    "serialNumber": "0001",[39m
+[36m    "locationId": "01120000",[39m
+[36m    "vendorId": "10c4",[39m
+[36m    "productId": "ea60"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.usbserial-2",[39m
+[36m    "manufacturer": "Silicon Labs",[39m
+[36m    "serialNumber": "0001",[39m
+[36m    "locationId": "01110000",[39m
+[36m    "vendorId": "10c4",[39m
+[36m    "productId": "ea60"[39m
+[36m  }[39m
+[36m][39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:13:46.439Z] Connect to server success +0ms [39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:13:58.725Z] Connect to server success +0ms [39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:14:02.218Z] !xru264:packet-1# +0ms [39m
+[36m{[39m
+[36m  "message": "!xru264:packet-1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T09:14:02.332Z] !czuwb2:packet-1# +114ms [39m
+[36m{[39m
+[36m  "message": "!czuwb2:packet-1#"[39m
+[36m}[39m
+[33m[GATEWAY_TESTING] [2023-06-10T09:14:02.965Z] Receive packet: "packet-1" +4s [39m
+[32m[GATEWAY_TESTING] [2023-06-10T09:14:02.966Z] Receive packet: "packet-1" +1ms [39m
+[32m[GATEWAY_TESTING] [2023-06-10T09:14:02.967Z] Packet #1 +1ms [39m
+[32m{[39m
+[32m  "receivedPacket": "packet-1",[39m
+[32m  "expectedPacket": "packet-1"[39m
+[32m}[39m
+[33m[GATEWAY_TESTING] [2023-06-10T09:14:02.968Z] Total packets receive 1 +1ms [39m
+[32m[GATEWAY_TESTING] [2023-06-10T09:14:02.968Z] Total packets receive 1 +0ms [39m
+[33m[GATEWAY_TESTING] [2023-06-10T09:14:02.968Z] Fail packets 0 +0ms [39m
+[32m[GATEWAY_TESTING] [2023-06-10T09:14:02.968Z] Fail packets 0 +0ms [39m
+[36m[GATEWAY_TESTING] [2023-06-10T18:16:50.221Z] List port available +0ms [39m
+[36m[[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.wlan-debug"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.T302A"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.Bluetooth-Incoming-Port"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.usbserial-0001",[39m
+[36m    "manufacturer": "Silicon Labs",[39m
+[36m    "serialNumber": "0001",[39m
+[36m    "locationId": "01110000",[39m
+[36m    "vendorId": "10c4",[39m
+[36m    "productId": "ea60"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.usbserial-4",[39m
+[36m    "manufacturer": "Silicon Labs",[39m
+[36m    "serialNumber": "0001",[39m
+[36m    "locationId": "01120000",[39m
+[36m    "vendorId": "10c4",[39m
+[36m    "productId": "ea60"[39m
+[36m  }[39m
+[36m][39m
+[36m[GATEWAY_TESTING] [2023-06-10T18:17:37.668Z] !czuwb2:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!czuwb2:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T18:19:31.552Z] !czuwb2:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!czuwb2:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T18:25:18.956Z] !czuwb2:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!czuwb2:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-10T18:30:35.988Z] !czuwb2:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!czuwb2:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-11T08:52:20.791Z] !czuwb2:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!czuwb2:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-11T08:55:52.676Z] !ulbyxs:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-11T09:08:19.562Z] !ulbyxs:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-11T09:08:24.221Z] !ulbyxs:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-11T09:08:38.925Z] !ulbyxs:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-11T09:09:36.583Z] !ulbyxs:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-11T09:09:44.297Z] !ulbyxs:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-11T09:09:48.090Z] !ulbyxs:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-11T09:11:17.705Z] !ulbyxs:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-11T09:11:39.543Z] !czuwb2:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!czuwb2:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-11T09:12:07.376Z] !ulbyxs:packet1# +0ms [39m
+[36m{[39m
+[36m  "message": "!ulbyxs:packet1#"[39m
+[36m}[39m
+[36m[GATEWAY_TESTING] [2023-06-11T09:20:10.261Z] List port available +0ms [39m
+[36m[[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.wlan-debug"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.T302A"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.Bluetooth-Incoming-Port"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.usbserial-0001",[39m
+[36m    "manufacturer": "Silicon Labs",[39m
+[36m    "serialNumber": "0001",[39m
+[36m    "locationId": "01110000",[39m
+[36m    "vendorId": "10c4",[39m
+[36m    "productId": "ea60"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.usbserial-5",[39m
+[36m    "manufacturer": "Silicon Labs",[39m
+[36m    "serialNumber": "0001",[39m
+[36m    "locationId": "01120000",[39m
+[36m    "vendorId": "10c4",[39m
+[36m    "productId": "ea60"[39m
+[36m  }[39m
+[36m][39m
+[36m[GATEWAY_TESTING] [2023-06-11T09:23:20.015Z] List port available +0ms [39m
+[36m[[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.wlan-debug"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.T302A"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.Bluetooth-Incoming-Port"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.usbserial-0001",[39m
+[36m    "manufacturer": "Silicon Labs",[39m
+[36m    "serialNumber": "0001",[39m
+[36m    "locationId": "01110000",[39m
+[36m    "vendorId": "10c4",[39m
+[36m    "productId": "ea60"[39m
+[36m  },[39m
+[36m  {[39m
+[36m    "path": "/dev/tty.usbserial-4",[39m
+[36m    "manufacturer": "Silicon Labs",[39m
+[36m    "serialNumber": "0001",[39m
+[36m    "locationId": "01120000",[39m
+[36m    "vendorId": "10c4",[39m
+[36m    "productId": "ea60"[39m
+[36m  }[39m
+[36m][39m
