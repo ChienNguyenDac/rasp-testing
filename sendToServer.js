@@ -27,25 +27,11 @@ async function sleep(seconds) {
 let failRequests = 0
 
 async function sendRequestToServer(requestId, localAddress) {
+  const hostname = 'http://raspberrypi.local:8000/webhook?serviceKey=820be8ab-c2b8-4d0b-bba2-1063fb15372b'
+
   try {
-    const ipAddresses = `192.168.0.${requestId}`
-    const username = serverConf.ioUsername
-    const feedKey = serverConf.ioFeedKey
     Logger.info('Send request to server', { requestId })
-    await axios.post(
-      `https://io.adafruit.com/api/v2/${username}/feeds/${feedKey}/data`,
-      {
-        value: `packet-${requestId}`,
-      },
-      {
-        headers: {
-          'X-Forwarded-For': ipAddresses,
-          'X-Real-IP': ipAddresses,
-          ['X-AIO-Key']: serverConf.ioKey,
-        },
-        // lo
-      },
-    )
+    await axios.post(hostname, { packet: requestId })
   } catch (error) {
     failRequests += 1
     Logger.error('Cannot send request to server', { requestId })

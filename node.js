@@ -12,45 +12,84 @@ async function sleep(miliseconds) {
   })
 }
 
-let totalPackets = 0
-const packets = []
+let isChecked = {}
+let totalPackets = {}
+const packets = {}
+let timeouts = {}
 
-function checkPacket() {
+function checkPacket(packetNumber, nodeHeader) {
+  if (isChecked[nodeHeader]) return
+  isChecked[nodeHeader] = true
+  const failPackets = []
   let totalFailPacket = 0
-  packets.forEach((e, index) => {
-    const requestId = index + 1
-    const expectedPacket = `packet-${requestId}`
-    Logger.debug(`Packet #${requestId}`, {
-      receivedPacket: e,
-      expectedPacket,
-    })
+  packets[nodeHeader].forEach((e, index) => {
+    console.log(e)
+    let convertPacket = { packet: null }
+    try {
+      convertPacket = JSON.parse(e)
+    } catch (error) {
+      convertPacket = { packet: null }
+    }
 
-    if (e !== expectedPacket) {
+    console.log('convert', convertPacket)
+    if (convertPacket.packet < 1 || convertPacket.packet > packetNumber) {
       totalFailPacket += 1
+      failPackets.push(e)
     }
   })
 
-  Logger.debug('Total packets receive ' + packets.length)
-  Logger.debug('Fail packets ' + totalFailPacket)
+  Logger.warn(`Node#${nodeHeader} total packets expected ${packetNumber}`)
+  Logger.debug(`Node#${nodeHeader} total packets expected ${packetNumber}`)
+
+  Logger.warn(`Node#${nodeHeader} total packets receive ${packets[nodeHeader].length}`)
+  Logger.debug(`Node#${nodeHeader} total packets receive ${packets[nodeHeader].length}`)
+
+  Logger.warn(`Node#${nodeHeader} fail packets ${totalFailPacket}`)
+  Logger.debug(`Node#${nodeHeader} fail packets ${totalFailPacket}`)
+
+  failPackets.forEach((e, idx) => {
+    Logger.warn(`Node#${nodeHeader} fail packets ${idx + 1} th: ${e}`)
+  })
 }
 
-function processData(message) {
-  Logger.warn('Receive packet', { message })
-  Logger.debug('Receive packet: ', { message })
-  totalPackets += 1
-  packets.push(message)
+function processData(message, packetNumber, nodeHeader) {
+  Logger.warn(`Node#${nodeHeader} receive packet: "${message}"`)
+  Logger.debug(`Node#${nodeHeader} receive packet: "${message}"`)
 
-  if (totalPackets >= appConf.packetNumber * 2) {
-    totalPackets = 0
-    checkPacket()
+  if (!totalPackets[nodeHeader]) {
+    totalPackets[nodeHeader] = 1
+  } else {
+    totalPackets[nodeHeader] += 1
+  }
+
+  message = message.replace(`${nodeHeader}:`, '')
+  if (!packets[nodeHeader]) {
+    packets[nodeHeader] = [message]
+  } else {
+    packets[nodeHeader].push(message)
+  }
+
+  if (!timeouts[nodeHeader]) {
+    timeouts[nodeHeader] = setTimeout(() => checkPacket(packetNumber, nodeHeader), 5000)
+  } else {
+    clearTimeout(timeouts[nodeHeader])
+    timeouts[nodeHeader] = setTimeout(() => checkPacket(packetNumber, nodeHeader), 5000)
+  }
+
+  if (totalPackets[nodeHeader] >= packetNumber || message === '{"packet":"finished"}') {
+    totalPackets[nodeHeader] = 0
+    if (message === '{"packet":"finished"}') {
+      packets[nodeHeader].pop()
+    }
+    checkPacket(packetNumber, nodeHeader)
   }
 }
-const modules = ['zigbee', 'lora']
-const nodes = ['czuwb2', 'ulbyxs']
+
+const modules = ['zigbee']
+const nodes = ['czuwb2']
 
 async function main() {
-  const promises = [serialConf.path1, serialConf.path2].map(async (path, index) => {
-    if (index == 0) return
+  const promises = [serialConf.path1].map(async (path, index) => {
     const serialClient = new SerialPort({
       path,
       baudRate: 9600,
@@ -67,31 +106,34 @@ async function main() {
     })
 
     serialClient.on('open', async () => {
-      // let message = ''
+      let message = ''
       console.info(`Port ${serialClient.path} have been opened`)
 
       // for (let i = 0; i < appConf.packetNumber; i++) {
       //   const requestId = i + 1
-      //   const message = `!${nodes[index]}:packet${requestId}#`
+      //   const name = Array(20).fill('packet').join('')
+      //   const message = `!${nodes[index]}:${name}${requestId}#`
       //   Logger.info(`Send packet#${modules[index]}#${requestId}`, { message })
       //   serialClient.write(message)
-      //   await sleep(100)
+      //   console.time('Delay time between packet')
+      //   await sleep(200)
+      //   console.timeEnd('Delay time between packet')
       // }
 
       // await sleep(1000)
       // serialClient.write(`!${nodes[index]}:finished#`)
-      console.log('message !td93rr:OK#')
-      serialClient.write('!td93rr:OK#')
-      // serialClient.on('data', function (data) {
-      //   message += data.toString()
+      // console.log('message !td93rr:OK#')
+      // serialClient.write('!td93rr:OK#')
+      serialClient.on('data', function (data) {
+        message += data.toString()
 
-      //   while (message.includes('!') && message.includes('#')) {
-      //     const startIndex = message.indexOf('!')
-      //     const endIndex = message.indexOf('#')
-      //     processData(message.substring(startIndex + 1, endIndex))
-      //     message = message.slice(endIndex + 1)
-      //   }
-      // })
+        while (message.includes('!') && message.includes('#')) {
+          const startIndex = message.indexOf('!')
+          const endIndex = message.indexOf('#')
+          processData(message.substring(startIndex + 1, endIndex), appConf.packetNumber, nodes[index])
+          message = message.slice(endIndex + 1)
+        }
+      })
     })
   })
 
